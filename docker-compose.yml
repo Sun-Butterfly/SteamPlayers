@@ -1,0 +1,60 @@
+services:
+  
+  player-postgres:
+    container_name: player-postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: Players
+    volumes:
+      - ./docker_data/players_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    ports:
+      - "6543:5432"
+  
+  games-postgres:
+    container_name: games-postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: Games
+    volumes:
+      - ./docker_data/games_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    ports:
+      - "4321:5432"
+  
+  game-api:
+    image: game-api
+    build:
+      context: ./Games
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_URLS: "http://+:80"
+      ConnectionStrings__DefaultConnection: 'Host=games-postgres;Port=5432;Username=postgres;Password=postgres;Database=Games'
+    ports:
+      - "7070:80"
+  
+  player-api:
+    image: player-api
+    build:
+      context: ./Players
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_URLS: "http://+:80"
+      ConnectionStrings__DefaultConnection: 'Host=player-postgres;Port=5432;Username=postgres;Password=postgres;Database=Players'
+      ConnectionStrings__GameApi: 'http://game-api:80'
+    ports:
+      - "7071:80"

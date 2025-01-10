@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Players", "Players\Players.csproj", "{809570B3-6985-4990-9D4C-2EC00BD9F617}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games", "Games\Games.csproj", "{A8E030D6-7266-41F3-824F-7481FB5ECDF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "meta", "meta", "{20C49304-E2E8-4170-A9C5-99670D991BAD}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Achievements", "Achievements\Achievements.csproj", "{A8B456AF-0F62-4826-8747-1CEF82DE41E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{809570B3-6985-4990-9D4C-2EC00BD9F617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809570B3-6985-4990-9D4C-2EC00BD9F617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809570B3-6985-4990-9D4C-2EC00BD9F617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809570B3-6985-4990-9D4C-2EC00BD9F617}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E030D6-7266-41F3-824F-7481FB5ECDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E030D6-7266-41F3-824F-7481FB5ECDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E030D6-7266-41F3-824F-7481FB5ECDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E030D6-7266-41F3-824F-7481FB5ECDF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8B456AF-0F62-4826-8747-1CEF82DE41E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B456AF-0F62-4826-8747-1CEF82DE41E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B456AF-0F62-4826-8747-1CEF82DE41E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B456AF-0F62-4826-8747-1CEF82DE41E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
