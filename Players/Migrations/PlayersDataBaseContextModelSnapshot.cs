@@ -34,6 +34,9 @@ namespace Players.Migrations
                         .IsRequired()
                         .HasColumnType("bigint[]");
 
+                    b.Property<List<long>>("GetedAchievementIds")
+                        .HasColumnType("bigint[]");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");

@@ -10,4 +10,11 @@ public class GamesDataBaseContext : DbContext
     {
         
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Game>()
+            .Property(x => x.AchievementIds)
+            .HasDefaultValue(new List<long>());
+    }
 }
